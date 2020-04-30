@@ -62,17 +62,15 @@ hexo server
 ```bash
 $ npm install hexo-deployer-git --save
 ```
-修改配置，默认master分支，跟部署分开改为gh-page分支
 ```yml
 deploy:
   type: git
   repository: https://github.com/lolhezihehe/lolhezihehe.github.io
-  branch: gh-pages
+  # User pages must be built from the master branch
+  branch: master
   message: Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})
 ```
 部署
 ```bash
 $ hexo deploy
 ```
-hexo自动上传到gh-pages分支
-修改lolhezihehe.github.io的默认分支为gh-pages
