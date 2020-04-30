@@ -100,4 +100,4 @@ theme: next
 deploy:
   type: git
   repository: https://github.com/lolhezihehe/lolhezihehe.github.io
-  branch: master
+  branch: gh-pages
