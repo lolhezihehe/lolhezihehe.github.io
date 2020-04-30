@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Guan9's blog
-subtitle: ''
-description: ''
+title: Guan9
+subtitle: 'Guan9的个人主页，博客'
+description: 'Guan9的个人主页，博客，简历'
 keywords:
 author: Guan9
 language: zh-CN
@@ -98,4 +98,6 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/lolhezihehe/lolhezihehe.github.io
+  branch: master
