@@ -15,7 +15,7 @@ $ cd <folder>
 $ npm install
 ```
 新建完成后，指定文件夹的目录如下：
-### 首页
+#### 首页
 默认的主题提供了一个首页（Homepage）的布局 (用于 这个网站的主页)。想要使用它，需要在你的docs根级 README.md 的 YAML front matter 指定 home: true。以下是一个如何使用的例子：
 ```bash
 .
@@ -54,7 +54,6 @@ git clone https://github.com/theme-next/hexo-theme-next themes/next
 ```bash
 hexo server
 ```
-
 
 #### 一键部署github pages
 创建一个lolhezihehe.github.io项目并关联
