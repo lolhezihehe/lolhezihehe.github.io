@@ -2,6 +2,7 @@
 title: 解决Mac系统Chrome Helper 占用CPU过高导致发热风扇狂转
 date: 2020-04-30 10:42:27
 categories: mac
+tags: mac
 ---
 最近使用Mac的时候突然风扇狂转，摸了摸touchbar上方有点烫。觉得有点奇怪，程序也没跑几个，打开活动监视器查看，发现 Google Chrome Helper 的CPU占用率达到104%，google以后找到解决方法。
 
