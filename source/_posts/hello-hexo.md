@@ -2,6 +2,7 @@
 title: hello-hexo
 date: 2020-04-30 14:13:58
 categories: hexo
+tags: hexo
 ---
 #### 安装 Hexo
 使用 npm 安装 Hexo。
@@ -65,11 +66,16 @@ $ npm install hexo-deployer-git --save
 deploy:
   type: git
   repository: https://github.com/lolhezihehe/lolhezihehe.github.io
-  # User pages must be built from the master branch
+  # User pages must be built from the master branchs
+  # github pages只能是master分支，建议新增一个写作分支区别与部署分支
   branch: master
   message: Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})
 ```
+修改pagckage.json
+```json
+"deploy": "hexo deploy -g"
+```
 部署
 ```bash
-$ hexo deploy
+$ npm run deploy
 ```
