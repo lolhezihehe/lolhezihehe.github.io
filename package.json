@@ -5,7 +5,7 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy -g",
+    "deploy": "git push origin hexo && hexo deploy -g",
     "server": "hexo server"
   },
   "hexo": {
