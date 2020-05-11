@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="最近使用Mac的时候突然风扇狂转，摸了摸touchbar上方有点烫。觉得有点奇怪，程序也没跑几个，打开活动监视器查看，发现 Google Chrome Helper 的CPU占用率达到104%，google以后找到解决方法。 解决方法： 原文地址  Invoke ⋮ Chrome Menu → More Tools → Task Manager to see what exactly consum">
+  <meta name="description" content="通过html转图片，图片转pdf实现html转pdf，这里以Vue为例 html2canvas首先实现html2canvas转图片 安装1npm install --save html2canvas template123&lt;div id&#x3D;&quot;view&quot;&gt;    &lt;!--something--&gt;&lt;&#x2F;div&gt; js实现过程遇到了截取的div超出可视区域，根据stack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决Mac系统Chrome Helper 占用CPU过高导致发热风扇狂转">
-<meta property="og:url" content="http://yoursite.com/2020/04/30/chrome-helper-high-cpu/index.html">
+<meta property="og:title" content="html2canvas+jspdf实现html转pdf">
+<meta property="og:url" content="http://yoursite.com/2020/05/10/html-to-pdf/index.html">
 <meta property="og:site_name" content="Guan9">
-<meta property="og:description" content="最近使用Mac的时候突然风扇狂转，摸了摸touchbar上方有点烫。觉得有点奇怪，程序也没跑几个，打开活动监视器查看，发现 Google Chrome Helper 的CPU占用率达到104%，google以后找到解决方法。 解决方法： 原文地址  Invoke ⋮ Chrome Menu → More Tools → Task Manager to see what exactly consum">
+<meta property="og:description" content="通过html转图片，图片转pdf实现html转pdf，这里以Vue为例 html2canvas首先实现html2canvas转图片 安装1npm install --save html2canvas template123&lt;div id&#x3D;&quot;view&quot;&gt;    &lt;!--something--&gt;&lt;&#x2F;div&gt; js实现过程遇到了截取的div超出可视区域，根据stack">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-30T02:42:27.000Z">
-<meta property="article:modified_time" content="2020-05-01T14:18:57.697Z">
+<meta property="article:published_time" content="2020-05-10T10:36:05.000Z">
+<meta property="article:modified_time" content="2020-05-11T02:45:53.730Z">
 <meta property="article:author" content="Guan9">
-<meta property="article:tag" content="mac">
+<meta property="article:tag" content="html2canvas">
+<meta property="article:tag" content="jspdf">
+<meta property="article:tag" content="html2pdf">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/30/chrome-helper-high-cpu/">
+<link rel="canonical" href="http://yoursite.com/2020/05/10/html-to-pdf/">
 
 
 <script id="page-configurations">
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>解决Mac系统Chrome Helper 占用CPU过高导致发热风扇狂转 | Guan9</title>
+  <title>html2canvas+jspdf实现html转pdf | Guan9</title>
   
 
 
@@ -162,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/chrome-helper-high-cpu/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/html-to-pdf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -175,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          解决Mac系统Chrome Helper 占用CPU过高导致发热风扇狂转
+          html2canvas+jspdf实现html转pdf
         </h1>
 
         <div class="post-meta">
@@ -185,14 +187,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-30 10:42:27" itemprop="dateCreated datePublished" datetime="2020-04-30T10:42:27+08:00">2020-04-30</time>
+              <time title="创建时间：2020-05-10 18:36:05" itemprop="dateCreated datePublished" datetime="2020-05-10T18:36:05+08:00">2020-05-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-01 22:18:57" itemprop="dateModified" datetime="2020-05-01T22:18:57+08:00">2020-05-01</time>
+                <time title="修改时间：2020-05-11 10:45:53" itemprop="dateModified" datetime="2020-05-11T10:45:53+08:00">2020-05-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -200,7 +202,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
             </span>
 
@@ -215,13 +217,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近使用Mac的时候突然风扇狂转，摸了摸touchbar上方有点烫。觉得有点奇怪，程序也没跑几个，打开活动监视器查看，发现 Google Chrome Helper 的CPU占用率达到104%，google以后找到解决方法。</p>
-<p>解决方法：</p>
-<p><a href="https://apple.stackexchange.com/questions/272000/how-to-make-google-chrome-helper-not-use-as-much-cpu" target="_blank" rel="noopener">原文地址</a></p>
-<blockquote>
-<p>Invoke ⋮ Chrome Menu → More Tools → Task Manager to see what exactly consumes CPU. Because the helper is a black box from the OS’ side of view. I personally found a mining extension that way.</p>
-</blockquote>
-<p>发现开showdoc占用的cpu有点高，最近升级了showdoc版本才导致这个问题，页面开着闲置久了会发生CPU使用率升高，先把网页关了，后面研究下是showdoc什么问题。</p>
+        <p>通过html转图片，图片转pdf实现html转pdf，这里以Vue为例</p>
+<h4 id="html2canvas"><a href="#html2canvas" class="headerlink" title="html2canvas"></a>html2canvas</h4><p>首先实现<a href="https://html2canvas.hertzen.com/" target="_blank" rel="noopener">html2canvas</a>转图片</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save html2canvas</span><br></pre></td></tr></table></figure>
+<h5 id="template"><a href="#template" class="headerlink" title="template"></a>template</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"view"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--something--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="js"><a href="#js" class="headerlink" title="js"></a>js</h5><p>实现过程遇到了截取的div超出可视区域，根据<a href="https://stackoverflow.com/questions/36213275/html2canvas-does-not-render-full-div-only-what-is-visible-on-screen" target="_blank" rel="noopener">stackoverflow</a>提供的方案解决了这个问题：添加{ scrollY: -window.scrollY }，其他配置可以看<a href="https://html2canvas.hertzen.com/" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> html2canvas <span class="keyword">from</span> <span class="string">'html2canvas'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    html2canvas()&#123;</span><br><span class="line">        html2canvas(<span class="built_in">document</span>.getElementById(<span class="string">'view'</span>), &#123; <span class="attr">scrollY</span>: -<span class="built_in">window</span>.scrollY &#125;).then(<span class="function">(<span class="params">canvas</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> imgUrl = canvas.toDataURL(<span class="string">'image/jepg'</span>);</span><br><span class="line">            <span class="built_in">window</span>.open(imgUrl);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="jspdf"><a href="#jspdf" class="headerlink" title="jspdf"></a>jspdf</h4><p>然后通过<a href="https://parall.ax/products/jspdf" target="_blank" rel="noopener">jspdf</a>实现图片转pdf，这里还是通过<a href="https://stackoverflow.com/questions/36472094/how-to-set-image-to-fit-width-of-the-page-using-jspdf" target="_blank" rel="noopener">stackoverflow</a>解决了div width铺满pdf的问题，在原有html2canvas添加jspdf代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> html2canvas <span class="keyword">from</span> <span class="string">'html2canvas'</span>;</span><br><span class="line"><span class="keyword">import</span> jsPDF <span class="keyword">from</span> <span class="string">'jspdf'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    html2canvas()&#123;</span><br><span class="line">        html2canvas(<span class="built_in">document</span>.getElementById(<span class="string">'view'</span>), &#123; <span class="attr">scrollY</span>: -<span class="built_in">window</span>.scrollY &#125;).then(<span class="function">(<span class="params">canvas</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> imgUrl = canvas.toDataURL(<span class="string">'image/jepg'</span>);</span><br><span class="line">            <span class="comment">// window.open(imgUrl);</span></span><br><span class="line">            <span class="keyword">const</span> doc = <span class="keyword">new</span> jsPDF(<span class="string">'p'</span>, <span class="string">'mm'</span>, <span class="string">'a4'</span>);</span><br><span class="line">            <span class="keyword">const</span> width = doc.internal.pageSize.getWidth();</span><br><span class="line">            <span class="keyword">const</span> height = doc.internal.pageSize.getHeight();</span><br><span class="line">            doc.addImage(imgUrl, <span class="string">'JPEG'</span>, <span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">            doc.save(<span class="string">'view.pdf'</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>好好用google和stackoverflow，虽然英文看起来比较吃力，但是解决问题效率真的高很多；</p>
 
     </div>
 
@@ -231,7 +237,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/mac/" rel="tag"># mac</a>
+              <a href="/tags/html2canvas/" rel="tag"># html2canvas</a>
+              <a href="/tags/jspdf/" rel="tag"># jspdf</a>
+              <a href="/tags/html2pdf/" rel="tag"># html2pdf</a>
           </div>
 
         
@@ -239,11 +247,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/04/30/hello-hexo/" rel="next" title="hello-hexo">
-      hello-hexo <i class="fa fa-chevron-right"></i>
+    <a href="/2020/04/30/hello-hexo/" rel="prev" title="hello-hexo">
+      <i class="fa fa-chevron-left"></i> hello-hexo
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -302,6 +310,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#html2canvas"><span class="nav-number">1.</span> <span class="nav-text">html2canvas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#template"><span class="nav-number">1.2.</span> <span class="nav-text">template</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#js"><span class="nav-number">1.3.</span> <span class="nav-text">js</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jspdf"><span class="nav-number">2.</span> <span class="nav-text">jspdf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
