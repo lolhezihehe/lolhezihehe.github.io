@@ -63,4 +63,6 @@ export default {
 ```
 
 #### 总结
-好好用google和stackoverflow，虽然英文看起来比较吃力，但是解决问题效率真的高很多；
+- jspdf中文转pdf会出现乱码问题，所以通过html2canvas+jspdf实现图片转pdf。
+- html2canvas如果清晰度不够可以增加scale（默认devicePixelRatio），但是这样的图片size会比较大，转pdf的时候会导致pdf过大，默认还是使用devicePixelRatio。
+- 在html2canvas转pdf下载过程中出现了页面阻塞问题，导致loading状态卡住，记录一下问题，后面抽空找个解决方案。
