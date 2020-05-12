@@ -28,7 +28,7 @@
 <meta property="og:description" content="通过html转图片，图片转pdf实现html转pdf，这里以Vue为例 html2canvas首先实现html2canvas转图片 安装1npm install --save html2canvas template123&lt;div id&#x3D;&quot;view&quot;&gt;    &lt;!--something--&gt;&lt;&#x2F;div&gt; js实现过程遇到了截取的div超出可视区域，根据stack">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-10T10:36:05.000Z">
-<meta property="article:modified_time" content="2020-05-11T02:45:53.730Z">
+<meta property="article:modified_time" content="2020-05-12T01:53:47.726Z">
 <meta property="article:author" content="Guan9">
 <meta property="article:tag" content="html2canvas">
 <meta property="article:tag" content="jspdf">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-11 10:45:53" itemprop="dateModified" datetime="2020-05-11T10:45:53+08:00">2020-05-11</time>
+                <time title="修改时间：2020-05-12 09:53:47" itemprop="dateModified" datetime="2020-05-12T09:53:47+08:00">2020-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -227,7 +227,11 @@
 <h4 id="jspdf"><a href="#jspdf" class="headerlink" title="jspdf"></a>jspdf</h4><p>然后通过<a href="https://parall.ax/products/jspdf" target="_blank" rel="noopener">jspdf</a>实现图片转pdf，这里还是通过<a href="https://stackoverflow.com/questions/36472094/how-to-set-image-to-fit-width-of-the-page-using-jspdf" target="_blank" rel="noopener">stackoverflow</a>解决了div width铺满pdf的问题，在原有html2canvas添加jspdf代码</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> html2canvas <span class="keyword">from</span> <span class="string">'html2canvas'</span>;</span><br><span class="line"><span class="keyword">import</span> jsPDF <span class="keyword">from</span> <span class="string">'jspdf'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    html2canvas()&#123;</span><br><span class="line">        html2canvas(<span class="built_in">document</span>.getElementById(<span class="string">'view'</span>), &#123; <span class="attr">scrollY</span>: -<span class="built_in">window</span>.scrollY &#125;).then(<span class="function">(<span class="params">canvas</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> imgUrl = canvas.toDataURL(<span class="string">'image/jepg'</span>);</span><br><span class="line">            <span class="comment">// window.open(imgUrl);</span></span><br><span class="line">            <span class="keyword">const</span> doc = <span class="keyword">new</span> jsPDF(<span class="string">'p'</span>, <span class="string">'mm'</span>, <span class="string">'a4'</span>);</span><br><span class="line">            <span class="keyword">const</span> width = doc.internal.pageSize.getWidth();</span><br><span class="line">            <span class="keyword">const</span> height = doc.internal.pageSize.getHeight();</span><br><span class="line">            doc.addImage(imgUrl, <span class="string">'JPEG'</span>, <span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">            doc.save(<span class="string">'view.pdf'</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>好好用google和stackoverflow，虽然英文看起来比较吃力，但是解决问题效率真的高很多；</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>jspdf中文转pdf会出现乱码问题，所以通过html2canvas+jspdf实现图片转pdf。</li>
+<li>html2canvas如果清晰度不够可以增加scale（默认devicePixelRatio），但是这样的图片size会比较大，转pdf的时候会导致pdf过大，默认还是使用devicePixelRatio。</li>
+<li>在html2canvas转pdf下载过程中出现了页面阻塞问题，导致loading状态卡住，记录一下问题，后面抽空找个解决方案。</li>
+</ul>
 
     </div>
 
