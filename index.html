@@ -455,6 +455,108 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/hello-cordova/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Guan9">
+      <meta itemprop="description" content="Guan9的个人主页，博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Guan9">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/10/17/hello-cordova/" class="post-title-link" itemprop="url">hello-cordova</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-10-17 15:20:00" itemprop="dateCreated datePublished" datetime="2018-10-17T15:20:00+08:00">2018-10-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-14 16:50:23" itemprop="dateModified" datetime="2020-05-14T16:50:23+08:00">2020-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h3><p>运行每个平台上需要对应的sdk，android需要先安装jdk和android sdk</p>
+<h4 id="Java安装"><a href="#Java安装" class="headerlink" title="Java安装"></a>Java安装</h4><p><a href="https://jingyan.baidu.com/article/f96699bbd30ca8894e3c1bdb.html" target="_blank" rel="noopener">jdk配置教程</a></p>
+<h4 id="Android-Studio安装"><a href="#Android-Studio安装" class="headerlink" title="Android Studio安装"></a>Android Studio安装</h4><p><a href="https://www.cnblogs.com/yanglh6-jyx/p/Android_AS_Configuration.html" target="_blank" rel="noopener">Android Studio安装配置教程</a>  </p>
+<ul>
+<li>sdk注意不要安装在路径有空格的目录</li>
+<li>在android studio可以跑在虚拟机或真机上的时候再添加<a href="https://github.com/apache/cordova-android" target="_blank" rel="noopener">cordova-android</a>配置</li>
+<li>安装<a href="https://github.com/apache/cordova-android" target="_blank" rel="noopener">cordova-android</a>平台时按对应<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html" target="_blank" rel="noopener">API-Levels</a>的来添加</li>
+</ul>
+<h3 id="Cordova"><a href="#Cordova" class="headerlink" title="Cordova"></a>Cordova</h3><h4 id="安装cordova"><a href="#安装cordova" class="headerlink" title="安装cordova"></a>安装cordova</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cordova</span><br></pre></td></tr></table></figure>
+<p>创建项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova create hello com.example.hello HelloWorld</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用cnpm安装可能会遇到<code>cordova create</code>的时候报错</li>
+</ul>
+<p>添加android运行平台</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova platform add android --save</span><br></pre></td></tr></table></figure>
+<p>检测是否满足构建平台要求</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cordova requirements</span><br><span class="line"></span><br><span class="line">Requirements check results <span class="keyword">for</span> android:</span><br><span class="line">Java JDK: installed .</span><br><span class="line">Android SDK: installed</span><br><span class="line">Android target: installed android-19,android-21,android-22,android-23,Google Inc.:Google APIs:19,Google Inc.:Google APIs (x86 System Image):19,Google Inc.:Google APIs:23</span><br><span class="line">Gradle: installed</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>cordova requirements</code>连真机会出现<code>Android target: not installed</code>，但是不影响<code>cordova build</code>或者<code>cordova run android</code></li>
+</ul>
+<h4 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h4><p>插件为H5提供可以调用手机设备的一些功能，比如调用摄像头，先添加插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova plugin add cordova-plugin-camera</span><br></pre></td></tr></table></figure>
+<p>js调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.camera.getPicture(successCallback, errorCallback, options)</span><br></pre></td></tr></table></figure>
+<p>cordova create生产基于web应用程序的骨架，项目开始页面位于www/index.html，打包完vue把dist里头的文件复制过来即可</p>
+<h4 id="deviceready"><a href="#deviceready" class="headerlink" title="deviceready"></a>deviceready</h4><p>Cordova加载完成会触发deviceready事件，调用摄像头等事件都需要在deviceready事件的回调函数里，比如在我们在vue中使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载完成后再初始化vue</span></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">     render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="android平台构建"><a href="#android平台构建" class="headerlink" title="android平台构建"></a>android平台构建</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova build android</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
 
@@ -523,7 +625,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -536,7 +638,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
