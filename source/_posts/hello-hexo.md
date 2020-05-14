@@ -48,7 +48,7 @@ timezone|	网站时区。Hexo 默认使用您电脑的时区。|
 git clone https://github.com/theme-next/hexo-theme-next themes/next
 ```
 - 修改_config.yml中的`theme:next`
-- 把next/_config.yml中的`scheme:Muse`换成`scheme:Muse`（替换注释行即可）启用mist主题
+- 把next/_config.yml中的`scheme:Muse`换成`scheme:Mist`（替换注释行即可）启用mist主题
 
 
 #### 运行
