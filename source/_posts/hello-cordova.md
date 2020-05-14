@@ -19,10 +19,9 @@ tags:
 #### Android Studio安装
 [Android Studio安装配置教程](https://www.cnblogs.com/yanglh6-jyx/p/Android_AS_Configuration.html)  
   
--  配置安装根据自己需要安装对应版本
 -  sdk注意不要安装在路径有空格的目录
 -  在android studio可以跑在虚拟机或真机上的时候再添加[cordova-android](https://github.com/apache/cordova-android)配置
--  [cordova-android](https://github.com/apache/cordova-android)平台时按对应[API-Levels](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html)的来添加
+-  安装[cordova-android](https://github.com/apache/cordova-android)平台时按对应[API-Levels](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html)的来添加
 
 ### Cordova
 
@@ -51,6 +50,7 @@ Android target: installed android-19,android-21,android-22,android-23,Google Inc
 Gradle: installed
 ```
 - `cordova requirements`连真机会出现`Android target: not installed`，但是不影响`cordova build`或者`cordova run android`
+
 #### 添加插件
 插件为H5提供可以调用手机设备的一些功能，比如调用摄像头，先添加插件
 ```bash
