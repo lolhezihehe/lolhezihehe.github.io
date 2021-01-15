@@ -110,7 +110,8 @@ npm install lint-staged --save-dev
 其实这个配置遵循了`prettier`的eslint规则，而不是`"some-other-config-you-use"`，*相当于你和你老婆意见一致时听你的，意见不一致时听你老婆的*，并没有很好的遵循`prettier`只做代码格式化。
 
 ### vscode
-使用vscode可以很好的实现`prettier`格式化，`eslint`负责代码检查
+我们团队使用vscode只配置eslint fix
+个人推荐先手动根据`prettier` format，再通过`eslint` fix
 
 - 安装`prettier`的vscode扩展
 - 添加需要`prettier`格式化的配置
@@ -137,7 +138,7 @@ npm install lint-staged --save-dev
   "vetur.format.defaultFormatter.html": "prettier",
 }
 ```
-- 添加自动format和fix的配置
+- 添加fix的配置
 ```json
 /* settings.json */
 {
@@ -160,12 +161,10 @@ npm install lint-staged --save-dev
   "vetur.format.defaultFormatter.ts": "prettier",
   "vetur.format.defaultFormatter.html": "prettier",
   
-  /* 保存自动格式化 */
-  "editor.formatOnSave": true,
   /* 保存自动修复 */
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
 }
 ```
-此配置对文件进行了2次修改，保存时自动格式化且修复代码，团队风格统一可以把工作区的`settings.json`传到git；
+团队风格统一可以把工作区的`settings.json`传到git；
