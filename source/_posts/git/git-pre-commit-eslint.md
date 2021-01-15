@@ -91,32 +91,34 @@ npm install lint-staged --save-dev
 
 
 ### prettier
-> 使用prettier配合eslint，prettier只做代码格式化，代码风格检查交给eslint；
+使用`prettier`配合`eslint`
 
-看了很多文章发现都会加类似的一句话，但是都会推荐安装`eslint-plugin-prettier`和`eslint-config-prettier`，然后添加如下配置
+先保证安装了`prettier`和`eslint`
+```bash
+npm install --save-dev eslint prettier
+```
+
+再安装eslint-config-prettier和eslint-plugin-prettier
+```bash
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+```
+`eslint-config-prettier`关闭了可能与Prettier冲突的ESLint规则，`eslint-plugin-prettier`则将Prettier规则集成到ESLint规则中，**相当于你和你老婆（prettier)意见一致时听你的，意见不一致时听你老婆（prettier)的**
+
+最后配置一下.eslintrc文件
 ```json
-/* .eslintrc */
+/* .eslintrc.json or .eslintrc.js */
 {
-  "extends": [
-    "some-other-config-you-use",
-    "prettier"
-  ],
+  "extends": ["prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
-  }
+    "prettier/prettier": ["error"]
+  },
 }
 ```
-其实这个配置遵循了`prettier`的eslint规则，而不是`"some-other-config-you-use"`，*相当于你和你老婆意见一致时听你的，意见不一致时听你老婆的*，并没有很好的遵循`prettier`只做代码格式化。
 
 ### vscode
-我们团队使用vscode只配置eslint fix
-个人推荐先手动根据`prettier` format，再通过`eslint` fix
-
-- 安装`prettier`的vscode扩展
-- 添加需要`prettier`格式化的配置
+分享一下我工作区的settings.json
 ```json
-/* settings.json */
 {
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -136,35 +138,12 @@ npm install lint-staged --save-dev
   "vetur.format.defaultFormatter.js": "prettier",
   "vetur.format.defaultFormatter.ts": "prettier",
   "vetur.format.defaultFormatter.html": "prettier",
-}
-```
-- 添加fix的配置
-```json
-/* settings.json */
-{
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
-  },
-  "vetur.format.defaultFormatter.js": "prettier",
-  "vetur.format.defaultFormatter.ts": "prettier",
-  "vetur.format.defaultFormatter.html": "prettier",
-  
-  /* 保存自动修复 */
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
+  },
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
   }
 }
+
 ```
-团队风格统一可以把工作区的`settings.json`传到git；
