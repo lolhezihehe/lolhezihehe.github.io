@@ -88,3 +88,85 @@ npm install lint-staged --save-dev
 通过git commit命令提交代码会先通过eslint检测，不通过的检测提交失败，命令终端会显示eslint报错的文件；
 通过vscode可视化提交检测失败会弹出git提示
 {% asset_img git-pre-commit-hook.png This is an pre-commit image %}
+
+
+### prettier
+> 使用prettier配合eslint，prettier只做代码格式化，代码风格检查交给eslint；
+
+看了很多文章发现都会加类似的一句话，但是都会推荐安装`eslint-plugin-prettier`和`eslint-config-prettier`，然后添加如下配置
+```json
+/* .eslintrc */
+{
+  "extends": [
+    "some-other-config-you-use",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
+```
+其实这个配置遵循了`prettier`的eslint规则，而不是`"some-other-config-you-use"`，并没有很好的遵循`prettier`只做代码格式化。
+
+### vscode
+使用vscode可以很好的实现`prettier`格式化，`eslint`负责代码检查
+
+- 安装`prettier`的vscode扩展
+- 添加需要`prettier`格式化的配置
+```json
+/* settings.json */
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.html": "prettier",
+}
+```
+- 添加自动format和fix的配置
+```json
+/* settings.json */
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.html": "prettier",
+  
+  /* 保存自动格式化 */
+  "editor.formatOnSave": true,
+  /* 保存自动修复 */
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+这样就可以实现保存自动格式化且修复代码，团队风格统一可以把工作区的`settings.json`传到git；
