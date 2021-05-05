@@ -1,5 +1,5 @@
 ---
-title: 2020-05-18 面试总结
+title: 常见面试题总结
 top: false
 cover: false
 date: 2020-05-18 19:40:29
@@ -9,9 +9,6 @@ tags:
 - js
 - css
 ---
-
-### 前言
-今天的面试印象比较深刻，笔试做错的题目面试官都帮忙指出并且解答的。比较尴尬的是有一道事件代理是没完全看明白英文，所以没作答，不过面试官问了所以还是回答了一下，现场回答的不是很好，所以这里总结一下。
 
 ### CSS
 ---
@@ -258,3 +255,7 @@ getAll();
 > JavaScript继承是基于原型链的，new一个实例时，每个实例共享prototype上的属性，当访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。几乎所有 JavaScript 中的对象都是位于原型链顶端的 Object 的实例。
 
 参考[MDN继承与原型链](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)和[JavaScript深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)
+
+
+### 其他
+- [JavaScript 进阶问题列表](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)
